@@ -2,28 +2,58 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : MonoBehaviour
+namespace Game.DefenseBasic
 {
-    private Animator m_anim;
+    public class Player : MonoBehaviour
 
-    private void Awake()
     {
-        m_anim = GetComponent<Animator>();
-    }
-    
-        
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+        public float atkRate;
+        private Animator m_anim;
+        private float m_curAtkRate;
+        private bool m_isatack;
 
-    // Update is called once per frame
-    void Update()
-    {
-        if (Input.GetMouseButtonDown(0))
+
+        private void Awake()
         {
-            Debug.Log("nguoi choi da bam chuot trai");
+            m_anim = GetComponent<Animator>();
+            m_curAtkRate = atkRate;
         }
+
+
+        // Start is called before the first frame update
+        void Start()
+        {
+
+        }
+
+        // Update is called once per frame
+        void Update()
+        {
+            if (Input.GetMouseButtonDown(0) && !m_isatack)
+            {
+                if (m_anim)
+                    m_anim.SetBool(Const.danh_ANIM, true);
+                m_isatack = true;
+            }
+            if (m_isatack)
+            {
+                m_curAtkRate -= Time.deltaTime;
+
+                if (m_curAtkRate <= 0)
+                {
+                    m_isatack = false;
+
+                    m_curAtkRate = atkRate;
+                }
+            }
+
+        }
+        public void ResetAtkAnim()
+        {
+            if (m_anim)
+                m_anim.SetBool(Const.danh_ANIM, false);
+        }
+
     }
 }
+   
