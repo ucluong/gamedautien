@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Game.DefenseBasic
 {
-    public class Enemy : MonoBehaviour
+    public class Enemy : MonoBehaviour 
     {
         public float speed;
         public float atkDistance;
@@ -14,24 +14,29 @@ namespace Game.DefenseBasic
         
 
         // Start is called before the first frame update
-        void Start()
+        private void Awake()
         {
             m_amin = GetComponent < Animator>();
             m_rb = GetComponent<Rigidbody2D>();
             m_player = FindObjectOfType<Player>();
         }
 
+        public bool IsComponentsNull()
+        {
+            return m_amin == null || m_rb == null || m_player == null;
+        }
+
         // Update is called once per frame
         void Update()
         {
-            if (m_rb == null || m_player == null) return;
+            if (IsComponentsNull() ) return;
 
           
             if(Vector2.Distance(m_player.transform.position,
                 transform.position) <= atkDistance)
             {
-                if (m_amin)
-                    m_amin.SetBool(Const.danh_ANIM, true);
+                
+                m_amin.SetBool(Const.danh_ANIM, true);
 
                 m_rb.velocity = Vector2.zero; // (0, 0)
               
