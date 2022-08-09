@@ -8,7 +8,7 @@ namespace Game.DefenseBasic
     {
         public const string PLAYER_TAG = "Player";
         public const string ENEMY_TAG = "Enemy";
-        public const string ENEMY_WEAPON_TAG = "EnemyWeapon";
+        public const string ENEMY_WEAPON_TAG = "Enemy woole";
 
         public const string danh_ANIM = "danh";
         public const string chet_ANIM = "chet";

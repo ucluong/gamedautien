@@ -13,9 +13,10 @@ GameObject:
   - component: {fileID: 2100264779206167240}
   - component: {fileID: 1389900398465853328}
   - component: {fileID: 881038147185645779}
-  m_Layer: 0
+  - component: {fileID: 7330258178388950677}
+  m_Layer: 6
   m_Name: Hero02
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -29,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 637646316714976574}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -9.526764, y: -0.46664417, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.6, y: 1.6, z: 1}
   m_Children:
   - {fileID: 169771773789454648}
   m_Father: {fileID: 0}
@@ -72,12 +73,12 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1339326057
+  m_SortingLayer: -1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 8483d3c8aa766c74d8d7f387b50f7924, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 3.05, y: 3.05}
@@ -152,6 +153,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.43254948, y: 1.3467212}
   m_EdgeRadius: 0
+--- !u!114 &7330258178388950677
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 637646316714976574}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5116da49cbd6f4419dfdbe91a18616c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  atkRate: 1
 --- !u!1 &6303195731737791324
 GameObject:
   m_ObjectHideFlags: 0
@@ -163,9 +177,10 @@ GameObject:
   - component: {fileID: 169771773789454648}
   - component: {fileID: 4712630118858663108}
   - component: {fileID: 4311292096129883410}
-  m_Layer: 0
+  - component: {fileID: 9027869876407014176}
+  m_Layer: 6
   m_Name: Weapon
-  m_TagString: Untagged
+  m_TagString: Emnemy woole
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -221,3 +236,15 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.23
+--- !u!114 &9027869876407014176
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6303195731737791324}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67a3f1e8d499b4449b6b9ab1f0e32d6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -72,7 +72,8 @@ namespace Game.DefenseBasic
             {
                 
                 m_anim.SetTrigger(Const.chet_ANIM);
-                
+                m_isDesd = true;
+                gameObject.layer = LayerMask.NameToLayer(Const.chet_LAYRE);
             }
         }
 
