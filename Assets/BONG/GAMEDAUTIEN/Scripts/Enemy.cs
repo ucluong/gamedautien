@@ -76,7 +76,7 @@ namespace Game.DefenseBasic
             m_gm.Score++;
             int coinBonus = Random.Range(minCoinBonus, maxCoinBonus);
             Pref.coins += coinBonus;
-            Debug.Log(coinBonus);
+            
 
             Destroy(gameObject, 2f);
         }
