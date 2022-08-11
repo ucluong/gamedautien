@@ -8,6 +8,8 @@ namespace Game.DefenseBasic
     {
         public float speed;
         public float atkDistance;
+        public int minCoinBonus;
+        public int maxCoinBonus;
         private Animator m_amin;
         private Rigidbody2D m_rb;
         private Player m_player;
@@ -31,7 +33,7 @@ namespace Game.DefenseBasic
 
         public bool IsComponentsNull()
         {
-            return m_amin == null || m_rb == null || m_player == null;
+            return m_amin == null || m_rb == null || m_player == null || m_gm == null;
         }
 
         // Update is called once per frame
@@ -68,8 +70,13 @@ namespace Game.DefenseBasic
             m_amin.SetTrigger(Const.chet_ANIM);
             m_rb.velocity = Vector2.zero;
             gameObject.layer = LayerMask.NameToLayer(Const.chet_ANIM);
-            if (m_gm)
+            
                 m_gm.Score++;
+
+            m_gm.Score++;
+            int coinBonus = Random.Range(minCoinBonus, maxCoinBonus);
+            Pref.coins += coinBonus;
+            Debug.Log(coinBonus);
 
             Destroy(gameObject, 2f);
         }

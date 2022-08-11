@@ -112,7 +112,7 @@ Transform:
   m_GameObject: {fileID: 6190601174021854246}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -8.853572, y: -1.3103775, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2.4718478, y: 2.406091, z: 1}
   m_Children:
   - {fileID: 4665645201736398188}
   m_Father: {fileID: 0}
@@ -249,3 +249,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 2
   atkDistance: 1.1
+  minCoinBonus: 3
+  maxCoinBonus: 5
